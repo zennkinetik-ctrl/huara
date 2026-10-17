@@ -1066,7 +1066,7 @@ function getConsent(){try{return localStorage.getItem(CK_KEY)}catch(e){return nu
 function loadFB(){document.querySelectorAll('.fb-post iframe[data-src]').forEach(f=>{f.src=f.getAttribute('data-src');f.removeAttribute('data-src');const ph=f.parentElement.querySelector('.fb-ph');if(ph)ph.remove();f.style.display='';});}
 function fbPlaceholders(){document.querySelectorAll('.fb-post iframe[data-src]').forEach(f=>{f.style.display='none';if(f.parentElement.querySelector('.fb-ph'))return;const d=document.createElement('div');d.className='fb-ph';d.innerHTML='<span>'+(LANG==='es'?'Esta publicación de Facebook se muestra solo si aceptas sus cookies.':'This Facebook post is shown only if you accept its cookies.')+'</span><button type="button">'+(LANG==='es'?'Mostrar publicaciones':'Show posts')+'</button>';d.querySelector('button').onclick=()=>setConsent('yes');f.parentElement.appendChild(d);});}
 /* Google Analytics 4: pega aquí el ID de medición (G-XXXXXXX) */
-const GA_ID='';
+const GA_ID='G-BY6B0GKRPV';
 function loadGA(){if(!GA_ID||window.__ga)return;window.__ga=1;const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',GA_ID,{anonymize_ip:true});}
 function track(name,params){try{if(window.gtag&&window.__ga)gtag('event',name,params||{})}catch(e){}}
 document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href*="wa.me"]');if(a)track('whatsapp_click',{link_url:a.href});},true);
