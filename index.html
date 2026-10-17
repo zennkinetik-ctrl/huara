@@ -229,6 +229,15 @@ header.solid .hbar{background:rgba(255,255,255,.14);backdrop-filter:blur(14px) s
 .like.on{background:#fdecea;border-color:#e0393e;color:#e0392b}
 .shareb{border:1px solid var(--line);background:transparent;border-radius:5px;padding:7px 12px;font:700 12px 'Inter';cursor:pointer;color:var(--ink)}
 .via{margin-left:auto;font-size:11px;color:var(--muted)}
+.real-rev{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;margin:10px auto 40px;align-items:stretch}
+.real-post .pq{font-size:16px;line-height:1.6;margin-top:6px}
+.real-stars{color:#f4b400;font-size:20px;letter-spacing:2px;margin-top:10px}
+.real-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;min-height:420px}
+.real-photos figure{position:relative;margin:0;border-radius:14px;overflow:hidden;min-height:0}
+.real-photos figure:first-child{grid-row:span 2}
+.real-photos img{width:100%;height:100%;object-fit:cover;display:block}
+.real-photos figcaption{position:absolute;left:10px;bottom:10px;background:rgba(17,17,17,.7);color:#fff;font:600 12px Inter;padding:6px 10px;border-radius:5px}
+@media(max-width:1000px){.real-rev{grid-template-columns:1fr}.real-photos{min-height:360px}}
 .feed{overflow:hidden;overflow:clip;max-width:100%;margin:10px auto 40px}
 .feed-track{display:flex;width:max-content;animation:feedScroll 55s linear infinite}
 .feed-track:hover{animation-play-state:paused}
@@ -643,66 +652,27 @@ footer h4{font-size:17px}
   <div class="social-head">
     <div>
       <p style="font-size:12px;font-weight:600;letter-spacing:.14em">● <span data-en="COMMUNITY" data-es="COMUNIDAD">COMMUNITY</span></p>
-      <h2 data-en="Loved by students worldwide" data-es="Amada por estudiantes de todo el mundo">Loved by students worldwide</h2>
-      <div class="score"><strong>4.9</strong><span class="waves-emoji">🌊🌊🌊🌊🌊</span><small data-en="127 verified reviews" data-es="127 reseñas verificadas">127 verified reviews</small></div>
-      <div class="plats"><span>G 5.0 · Google</span><a href="https://www.instagram.com/huaraspanishschool/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">◎ @huaraspanishschool</a><a href="https://www.facebook.com/huaraspanishschool/?locale=es_LA" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">f huaraspanishschool</a></div>
+      <h2 data-en="What our students say" data-es="Lo que dicen nuestros estudiantes">What our students say</h2>
+      <div class="plats"><a href="https://www.instagram.com/huaraspanishschool/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">◎ @huaraspanishschool</a><a href="https://www.facebook.com/huaraspanishschool/?locale=es_LA" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">f huaraspanishschool</a></div>
     </div>
     <div class="social-cta">
       <a class="btn-pill btn-dark" href="#" onclick="return false"><span data-en="★ Review us on Google" data-es="★ Opina en Google">★ Review us on Google</span></a>
       <button class="btn-pill" style="background:#25d366;color:#fff" onclick="shareSite()"><svg viewBox="0 0 24 24" fill="#fff" style="width:18px;height:18px;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-en="Share ↗" data-es="Compartir ↗">Share ↗</span></button>
     </div>
   </div>
-  <div class="feed"><div class="feed-track" id="feedTrack">
-    <article class="rev post" data-post="r1">
-      <div class="post-head"><img class="avatar-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80&auto=format&fit=crop" alt="Lena M."><div><strong>Lena M.</strong><small data-en="Germany · 2 weeks ago" data-es="Alemania · hace 2 sem">Germany · 2 weeks ago</small></div><span class="verified" data-en="✓ Verified stay" data-es="✓ Estancia verificada">✓ Verified stay</span></div>
-      <div class="waves-emoji">🌊🌊🌊🌊🌊</div>
-      <p class="pq">"I came for 2 weeks and stayed 2 months. Classes + surf + Friday dinners feel like family."</p>
-      <div class="post-tags"><span>B1→B2</span><span>8 weeks</span><span>Surf</span></div>
-      <div class="post-foot"><button class="like" data-like="r1">♥ <b>24</b></button><button class="shareb" onclick="shareReview('r1')"><span data-en="Share" data-es="Compartir">Share</span> ↗</button><span class="via">via Google</span></div>
+  <div class="real-rev">
+    <article class="rev post real-post" data-post="g1">
+      <div class="post-head"><span class="ig-ava"><b>★</b></span><div><strong data-en="Huara student" data-es="Estudiante de Huara">Huara student</strong><small data-en="Real review · 5 stars" data-es="Reseña real · 5 estrellas">Real review · 5 stars</small></div></div>
+      <div class="real-stars">★★★★★</div>
+      <p class="pq">"I would really recommend going to Pichilemu and doing at least a week of classes here. It isn't like a normal Spanish school in a classroom, it is so much more. Katterina welcomed us into her home and we felt like we became part of the family. I had lessons with Katterina where we chatted for hours but also went over some grammar weaknesses in a more structured way. My partner was with Katterina's daughter, Sayay, and he had so much fun learning and playing games - they were constantly laughing. We went to the market, the circus and a bar throughout the week with them so we could practice our Spanish in real life situations. It was such a good way to learn Spanish but also to immerse ourselves in the culture which you can't get at a normal school. I wish we could've stayed longer!"</p>
+      <div class="post-foot"><button class="shareb" onclick="shareReview('g1')"><span data-en="Share" data-es="Compartir">Share</span> ↗</button></div>
     </article>
-    <article class="rev post" data-post="r2">
-      <div class="post-head"><img class="avatar-img" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80&auto=format&fit=crop" alt="Jake T."><div><strong>Jake T.</strong><small data-en="USA · 1 month ago" data-es="EE.UU. · hace 1 mes">USA · 1 month ago</small></div><span class="verified" data-en="✓ Verified stay" data-es="✓ Estancia verificada">✓ Verified stay</span></div>
-      <div class="waves-emoji">🌊🌊🌊🌊🌊</div>
-      <p class="pq">"Analog vibe, real Chile. Learned more speaking on the terrace than in 2 years of app."</p>
-      <div class="post-tags"><span>A2→B1</span><span>4 weeks</span><span>Terrace</span></div>
-      <div class="post-foot"><button class="like" data-like="r2">♥ <b>18</b></button><button class="shareb" onclick="shareReview('r2')"><span data-en="Share" data-es="Compartir">Share</span> ↗</button><span class="via">via Instagram</span></div>
-    </article>
-    <article class="rev post" data-post="r3">
-      <div class="post-head"><img class="avatar-img" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80&auto=format&fit=crop" alt="Sofia R."><div><strong>Sofia R.</strong><small data-en="Australia · 2 months ago" data-es="Australia · hace 2 meses">Australia · 2 months ago</small></div><span class="verified" data-en="✓ Verified stay" data-es="✓ Estancia verificada">✓ Verified stay</span></div>
-      <div class="waves-emoji">🌊🌊🌊🌊🌊</div>
-      <p class="pq">"Online pack kept my level sharp from Berlin. Then I flew for the surf pack. Worth it."</p>
-      <div class="post-tags"><span>B2→C1</span><span>Online + Surf</span></div>
-      <div class="post-foot"><button class="like" data-like="r3">♥ <b>31</b></button><button class="shareb" onclick="shareReview('r3')"><span data-en="Share" data-es="Compartir">Share</span> ↗</button><span class="via">via Google</span></div>
-    </article>
-    <article class="rev post" data-post="r4">
-      <div class="post-head"><img class="avatar-img" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80&auto=format&fit=crop" alt="Marie F."><div><strong>Marie F.</strong><small data-en="France · 3 weeks ago" data-es="Francia · hace 3 sem">France · 3 weeks ago</small></div><span class="verified" data-en="✓ Verified stay" data-es="✓ Estancia verificada">✓ Verified stay</span></div>
-      <div class="waves-emoji">🌊🌊🌊🌊🌊</div>
-      <p class="pq">"I finally dare to speak. Ordering seafood in Spanish at the cove felt like a victory."</p>
-      <div class="post-tags"><span>A1→A2</span><span>2 weeks</span><span>Food</span></div>
-      <div class="post-foot"><button class="like" data-like="r4">♥ <b>15</b></button><button class="shareb" onclick="shareReview('r4')"><span data-en="Share" data-es="Compartir">Share</span> ↗</button><span class="via">via Instagram</span></div>
-    </article>
-    <article class="rev post" data-post="r5">
-      <div class="post-head"><img class="avatar-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80&auto=format&fit=crop" alt="Tom H."><div><strong>Tom H.</strong><small data-en="UK · 1 week ago" data-es="Reino Unido · hace 1 sem">UK · 1 week ago</small></div><span class="verified" data-en="✓ Verified stay" data-es="✓ Estancia verificada">✓ Verified stay</span></div>
-      <div class="waves-emoji">🌊🌊🌊🌊🌊</div>
-      <p class="pq">"Surf in the morning, subjunctive in the afternoon. Best combo in Chile."</p>
-      <div class="post-tags"><span>B1</span><span>3 weeks</span><span>Surf</span></div>
-      <div class="post-foot"><button class="like" data-like="r5">♥ <b>27</b></button><button class="shareb" onclick="shareReview('r5')"><span data-en="Share" data-es="Compartir">Share</span> ↗</button><span class="via">via Google</span></div>
-    </article>
-    <article class="rev post" data-post="r6">
-      <div class="post-head"><img class="avatar-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80&auto=format&fit=crop" alt="Lucas P."><div><strong>Lucas P.</strong><small data-en="Brazil · 2 months ago" data-es="Brasil · hace 2 meses">Brazil · 2 months ago</small></div><span class="verified" data-en="✓ Verified stay" data-es="✓ Estancia verificada">✓ Verified stay</span></div>
-      <div class="waves-emoji">🌊🌊🌊🌊🌊</div>
-      <p class="pq">"Aprendí más español en un mes aquí que en un año de clases online."</p>
-      <div class="post-tags"><span>A2→B1</span><span>4 weeks</span><span>Terrace</span></div>
-      <div class="post-foot"><button class="like" data-like="r6">♥ <b>12</b></button><button class="shareb" onclick="shareReview('r6')"><span data-en="Share" data-es="Compartir">Share</span> ↗</button><span class="via">via Instagram</span></div>
-    </article>
-    <article class="rev post" data-post="r7">
-      <div class="post-head"><img class="avatar-img" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80&auto=format&fit=crop" alt="Emma W."><div><strong>Emma W.</strong><small data-en="USA · 3 months ago" data-es="EE.UU. · hace 3 meses">USA · 3 months ago</small></div><span class="verified" data-en="✓ Verified stay" data-es="✓ Estancia verificada">✓ Verified stay</span></div>
-      <div class="waves-emoji">🌊🌊🌊🌊🌊</div>
-      <p class="pq">"Friday dinners are the best classroom. I left with friends from six countries."</p>
-      <div class="post-tags"><span>B2</span><span>6 weeks</span><span>Dinners</span></div>
-      <div class="post-foot"><button class="like" data-like="r7">♥ <b>19</b></button><button class="shareb" onclick="shareReview('r7')"><span data-en="Share" data-es="Compartir">Share</span> ↗</button><span class="via">via Google</span></div>
-    </article>
-  </div></div>
+    <div class="real-photos">
+      <figure><img src="img/comunidad/feria.jpg" alt="Huara students at the Pichilemu market" loading="lazy"><figcaption data-en="At the market" data-es="En la feria">At the market</figcaption></figure>
+      <figure><img src="img/comunidad/bar.jpg" alt="Huara students practicing Spanish at a bar" loading="lazy"><figcaption data-en="Spanish in real life" data-es="Español en la vida real">Spanish in real life</figcaption></figure>
+      <figure><img src="img/comunidad/cena.jpg" alt="Huara students and teachers at dinner" loading="lazy"><figcaption data-en="Part of the family" data-es="Parte de la familia">Part of the family</figcaption></figure>
+    </div>
+  </div>
   <div class="ig-head">
     <span class="ig-ava"><b>H</b></span>
     <div><strong>huaraspanishschool</strong><small data-en="Pichilemu, Chile · Language school" data-es="Pichilemu, Chile · Escuela de idiomas">Pichilemu, Chile · Language school</small></div>
