@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: blob: https:; media-src 'self'; frame-src https://*.facebook.com https://facebook.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: blob: https:; media-src 'self'; frame-src https://*.facebook.com https://facebook.com; connect-src 'self' https://marine-api.open-meteo.com https://api.open-meteo.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="google" content="notranslate">
 <title>Huara Spanish School · Learn Spanish in Pichilemu, Chile | Spanish & Surf</title>
@@ -183,6 +183,34 @@ header.solid .hbar{background:rgba(255,255,255,.14);backdrop-filter:blur(14px) s
 .count div{background:rgba(255,255,255,.14);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.25);border-radius:12px;min-width:78px;padding:12px;flex:0 1 auto}
 .count strong{font-family:'Archivo';font-size:28px;display:block}
 .count span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+/* SURF REPORT (Open-Meteo) */
+.sr{background:var(--deep);color:#fff;border-radius:14px;padding:22px 24px;margin:-8px 0 20px;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:22px;align-items:stretch}
+.sr[hidden]{display:none}
+.sr-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.sr-head p{font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.75}
+.sr-head h3{font-size:clamp(22px,2.6vw,30px);margin-top:4px}
+.sr-live{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+.sr-live i{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.6);animation:srp 2s infinite}
+@keyframes srp{70%{box-shadow:0 0 0 8px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+.sr-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.sr-stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px;min-width:0}
+.sr-stat small{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.sr-stat strong{font-family:'Archivo';font-size:26px;font-weight:800;display:block;margin-top:4px;white-space:nowrap}
+.sr-stat strong em{font-style:normal;font-size:14px;font-weight:600;opacity:.75;margin-left:2px}
+.sr-stat span{font-size:12px;opacity:.8;display:inline-flex;align-items:center;gap:5px}
+.sr-arrow{display:inline-block;transition:transform .4s}
+.sr-tag{display:inline-block;margin-top:14px;padding:7px 12px;border-radius:5px;font-size:12px;font-weight:600;background:rgba(255,255,255,.12)}
+.sr-tag.lvl1{background:#3ddc84;color:#06301a}.sr-tag.lvl2{background:#ffc94d;color:#3a2a00}.sr-tag.lvl3{background:var(--accent);color:#fff}
+.sr-days{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-content:start}
+.sr-days>p{grid-column:1/-1;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.75;margin-bottom:2px}
+.sr-day{background:rgba(255,255,255,.06);border-radius:10px;padding:12px 8px;text-align:center}
+.sr-day small{font-size:11px;text-transform:uppercase;letter-spacing:.1em;opacity:.75}
+.sr-day strong{display:block;font-family:'Archivo';font-size:22px;margin:6px 0 2px}
+.sr-day span{font-size:11px;opacity:.75}
+.sr-foot{grid-column:1/-1;font-size:11px;opacity:.6;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:12px}
+.sr-foot a{text-decoration:underline}
+@media(max-width:860px){.sr{grid-template-columns:1fr}.sr-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.sr{padding:18px 14px;margin-top:-6px}.sr-stat strong{font-size:22px}}
 /* ADDONS + BOOKING */
 .split2{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:16px;margin:20px auto 60px}
 .addons{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;min-width:0}
@@ -613,6 +641,7 @@ footer h4{font-size:17px}
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><button class="btn-pill btn-white" onclick="addToCart('surf-pack')">Add Surf Pack — $270 🏄</button><button class="btn-pill" style="background:transparent;border:1px solid #fff;color:#fff" onclick="quickView('surf-pack')">Quick view</button></div>
     </div>
   </div>
+  <section class="sr" id="surfReport" aria-live="polite" hidden></section>
 </div>
 
 <!-- ADDONS + CHECKOUT -->
@@ -872,7 +901,7 @@ const MAIN_IDS=['group','private','surf-pack','private-hour','online-8h','online
 function unitTxt(id,q){const u=UNITS[PRODUCTS[id].unit][LANG];return q+' '+(q===1?u[0]:u[1]);}
 function lineTotal(id,q){const p=PRODUCTS[id];return (p.priceWk&&q>=2?p.priceWk:p.price)*q;}
 function priceLabel(id){const p=PRODUCTS[id],u=UNITS[p.unit][LANG][0];let s='$'+p.price+' / '+u;if(p.priceWk)s+=LANG==='en'?' · $'+p.priceWk+'/week from 2 weeks':' · $'+p.priceWk+'/semana desde 2 semanas';return s;}
-function setLang(l){LANG=l;['btnEN','btnENm'].forEach(id=>{const b=document.getElementById(id);if(b)b.classList.toggle('active',l==='en');});['btnES','btnESm'].forEach(id=>{const b=document.getElementById(id);if(b)b.classList.toggle('active',l==='es');});document.querySelectorAll('[data-en]').forEach(el=>el.innerHTML=el.dataset[l]);const wa=document.getElementById('waFloat');if(wa)wa.href='https://wa.me/56953336046?text='+encodeURIComponent(l==='es'?'¡Hola Huara! Quiero info sobre los programas de español en Pichilemu.':'Hi Huara! I want info about Spanish programs in Pichilemu.');renderGrid();renderAddons();renderCart();}
+function setLang(l){LANG=l;['btnEN','btnENm'].forEach(id=>{const b=document.getElementById(id);if(b)b.classList.toggle('active',l==='en');});['btnES','btnESm'].forEach(id=>{const b=document.getElementById(id);if(b)b.classList.toggle('active',l==='es');});document.querySelectorAll('[data-en]').forEach(el=>el.innerHTML=el.dataset[l]);const wa=document.getElementById('waFloat');if(wa)wa.href='https://wa.me/56953336046?text='+encodeURIComponent(l==='es'?'¡Hola Huara! Quiero info sobre los programas de español en Pichilemu.':'Hi Huara! I want info about Spanish programs in Pichilemu.');renderGrid();renderAddons();renderCart();if(typeof renderSurf==='function')renderSurf();}
 function setFilter(f,btn){FILTER=f;document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderGrid();}
 function renderGrid(){
  const ids=MAIN_IDS.filter(id=>FILTER==='all'||PRODUCTS[id].cat===FILTER);
@@ -1059,6 +1088,52 @@ const st=document.getElementById('stripTrack');if(st)st.innerHTML+=st.innerHTML;
 const st2=document.getElementById('stripTrack2');if(st2){st2.innerHTML+=st2.innerHTML;st2.addEventListener('click',e=>{if(e.target&&e.target.tagName==='IMG')openLB(e.target.src);});}
 const stEl=document.getElementById('stripTrack');if(stEl)stEl.addEventListener('click',e=>{if(e.target&&e.target.tagName==='IMG')openLB(e.target.src);});
 const ft=document.getElementById('feedTrack');if(ft)ft.innerHTML+=ft.innerHTML;
+// SURF REPORT — Open-Meteo (Pichilemu, frente a La Puntilla)
+const SR={lat:-34.38,lon:-72.03,tz:'America/Santiago',data:null};
+function srCard(d){const v=['N','NE','E','SE','S','SW','W','NW'],e=['N','NE','E','SE','S','SO','O','NO'];const i=Math.round(((d%360)+360)%360/45)%8;return (LANG==='es'?e:v)[i];}
+function srArrow(d){return `<b class="sr-arrow" style="transform:rotate(${Math.round(d+180)}deg)" aria-hidden="true">↑</b>`;}
+function srLevel(h){
+ if(h<1.2)return{c:'lvl1',t:LANG==='es'?'Mar suave · ideal para aprender':'Gentle sea · great for learning'};
+ if(h<2.2)return{c:'lvl2',t:LANG==='es'?'Buen oleaje · para todos los niveles con instructor':'Good swell · all levels with an instructor'};
+ return{c:'lvl3',t:LANG==='es'?'Mar grande · las clases se adaptan al día':'Big sea · classes adapt to the conditions'};
+}
+function srNum(x,dec){return (x==null||isNaN(x))?'–':Number(x).toFixed(dec);}
+function renderSurf(){
+ const box=document.getElementById('surfReport');if(!box||!SR.data)return;
+ const {m,w}=SR.data,c=m.current,es=LANG==='es';
+ const h=c.wave_height, per=c.swell_wave_period!=null?c.swell_wave_period:c.wave_period, dir=c.swell_wave_direction!=null?c.swell_wave_direction:c.wave_direction;
+ const lv=srLevel(h);
+ const loc=es?'es-CL':'en-US';
+ const days=(m.daily&&m.daily.time||[]).slice(0,3).map((t,i)=>{const dt=new Date(t+'T12:00:00');const lbl=i===0?(es?'Hoy':'Today'):dt.toLocaleDateString(loc,{weekday:'short'});const wmax=w.daily&&w.daily.wind_speed_10m_max?w.daily.wind_speed_10m_max[i]:null;return `<div class="sr-day"><small>${lbl}</small><strong>${srNum(m.daily.wave_height_max[i],1)} m</strong><span>${srNum(m.daily.wave_period_max[i],0)} s · ${srCard(m.daily.wave_direction_dominant[i])}</span>${wmax!=null?`<br><span>💨 ${Math.round(wmax)} km/h</span>`:''}</div>`;}).join('');
+ const upd=new Date().toLocaleTimeString(loc,{hour:'2-digit',minute:'2-digit',timeZone:SR.tz});
+ box.innerHTML=`<div>
+  <div class="sr-head"><div><p>${es?'Reporte de surf':'Surf report'} · Pichilemu</p><h3>${es?'Así está el mar hoy':'Today\'s ocean'}</h3></div><span class="sr-live"><i></i>${es?'En vivo':'Live'}</span></div>
+  <div class="sr-stats">
+   <div class="sr-stat"><small>${es?'Ola':'Waves'}</small><strong>${srNum(h,1)}<em>m</em></strong><span>${srArrow(dir)} ${srCard(dir)}</span></div>
+   <div class="sr-stat"><small>${es?'Período':'Period'}</small><strong>${srNum(per,0)}<em>s</em></strong><span>${es?'swell':'swell'}</span></div>
+   <div class="sr-stat"><small>${es?'Viento':'Wind'}</small><strong>${w.current?Math.round(w.current.wind_speed_10m):'–'}<em>km/h</em></strong><span>${w.current?srArrow(w.current.wind_direction_10m)+' '+srCard(w.current.wind_direction_10m):''}</span></div>
+   <div class="sr-stat"><small>${es?'Agua':'Water'}</small><strong>${srNum(c.sea_surface_temperature,0)}<em>°C</em></strong><span>${c.sea_surface_temperature!=null&&c.sea_surface_temperature<16?(es?'traje incluido 😉':'wetsuit included 😉'):'&nbsp;'}</span></div>
+  </div>
+  <span class="sr-tag ${lv.c}">${lv.t}</span>
+ </div>
+ <div class="sr-days"><p>${es?'Próximos 3 días · ola máx.':'Next 3 days · max wave'}</p>${days}</div>
+ <div class="sr-foot"><span>${es?'Pronóstico de mar abierto frente a Pichilemu; en la playa puede variar.':'Open-sea forecast off Pichilemu; it can differ at the beach.'} ${es?'Actualizado':'Updated'} ${upd}</span><span>${es?'Datos':'Data'}: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0)</span></div>`;
+ box.hidden=false;
+}
+async function loadSurf(){
+ try{
+  const base=`latitude=${SR.lat}&longitude=${SR.lon}&timezone=${encodeURIComponent(SR.tz)}&forecast_days=3`;
+  const [mr,wr]=await Promise.all([
+   fetch(`https://marine-api.open-meteo.com/v1/marine?${base}&current=wave_height,wave_direction,wave_period,swell_wave_height,swell_wave_direction,swell_wave_period,sea_surface_temperature&daily=wave_height_max,wave_period_max,wave_direction_dominant`),
+   fetch(`https://api.open-meteo.com/v1/forecast?${base}&current=wind_speed_10m,wind_direction_10m&daily=wind_speed_10m_max&wind_speed_unit=kmh`)
+  ]);
+  if(!mr.ok)throw new Error('marine '+mr.status);
+  const m=await mr.json(),w=wr.ok?await wr.json():{};
+  if(!m.current||m.current.wave_height==null)throw new Error('no data');
+  SR.data={m,w};renderSurf();
+ }catch(e){const b=document.getElementById('surfReport');if(b&&!SR.data)b.hidden=true;}
+}
+loadSurf();setInterval(loadSurf,30*60*1000);
 renderGrid();renderAddons();renderCart();initLikes();
 /* ===== COOKIES / CONSENT ===== */
 const CK_KEY='huara_consent_v1';
